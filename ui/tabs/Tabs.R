@@ -1,0 +1,7 @@
+source('ui/tabs/Tab1.R')
+source('ui/tabs/Tab2.R')
+source('ui/tabs/Tab3.R')
+source('ui/tabs/Tab4.R')
+source('ui/tabs/Tab5.R')
+source('ui/tabs/Tab6.R')
+source('ui/tabs/Tab7.R')
