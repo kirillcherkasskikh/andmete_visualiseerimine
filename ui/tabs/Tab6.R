@@ -8,8 +8,6 @@ Tab6 <- tabPanel("K-Means Clustering", icon =icon("fa-regular fa-chart-pie"),
                      
                    ),
                    mainPanel(
-                     #ggvisOutput("kMeansPlot1"),
-                    # uiOutput("p_ui"),
                    
                      plotOutput("kMeansPlot1", height="800px")
                      

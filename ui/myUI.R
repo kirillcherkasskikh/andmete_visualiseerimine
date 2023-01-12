@@ -7,9 +7,9 @@ myUI <- dashboardPage(
   dashboardSidebar(disable=TRUE),
   dashboardBody(
   UICSS,
-  titlePanel("Spotify muusika soovitussüsteem"),
-  helpText("Õppeaine: Andmete visualiseerimine (Virumaa) - ITB8812"),
-  helpText("Õppejoud: Olga Dunajeva"),
+  titlePanel("Spotify muusika soovitussusteem"),
+  helpText("Oppeaine: Andmete visualiseerimine (Virumaa) - ITB8812"),
+  helpText("Oppejoud: Olga Dunajeva"),
   helpText("Autor: Kirill Cherkasskikh"),
   tabsetPanel(
     Tab1,

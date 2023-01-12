@@ -1,5 +1,3 @@
-source('server/renderDT.R')
-
 myserver <- function(input, output, session) {
   
   ################################################################################
@@ -38,10 +36,10 @@ myserver <- function(input, output, session) {
   })
   
   #Update Inputs
-  updateSelectizeInput(session, 'sip_tunnus', choices = c("Kõik tunnused", sort(colnames(Filter(is.numeric, data[,-1])), decreasing=TRUE)), server=TRUE)
+  updateSelectizeInput(session, 'sip_tunnus', choices = c("Koik tunnused", sort(colnames(Filter(is.numeric, data[,-1])), decreasing=TRUE)), server=TRUE)
   
   data_numbers <- reactive({
-    if(sip_tunnus() == "Kõik tunnused"){
+    if(sip_tunnus() == "Koik tunnused"){
       data_numbers <- Filter(is.numeric, data[,-1])
       data_numbers
     }
@@ -52,7 +50,7 @@ myserver <- function(input, output, session) {
   })
   
   dist_plot_name <-reactive({
-    if(sip_tunnus() == "Kõik tunnused"){
+    if(sip_tunnus() == "Koik tunnused"){
       name <- "Histogrammid:"
       name
     }
@@ -73,13 +71,13 @@ myserver <- function(input, output, session) {
   })
   
   output$dist_plot <- renderPlot({
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       boxplot(data %>% select(sip_tunnus()), col="skyblue", horizontal=1, xlab=paste("", sip_tunnus()), main=paste("", sip_tunnus(), "\n karp-vurrud diagramm"), cex.main=0.9, cex.axis=0.7,cex.lab=0.8)
     }
   })
   
   #output$dist_table <- renderPrint({
-  #  if(sip_tunnus() != "Kõik tunnused"){
+  #  if(sip_tunnus() != "Koik tunnused"){
 
   #    summary(data %>% select(sip_tunnus()))
   #  }
@@ -87,42 +85,42 @@ myserver <- function(input, output, session) {
   
   output$vbox4 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[1], subtitle = "", color="blue", width=1)
     }
    
   })
   output$vbox5 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[2], subtitle = "", color="blue", width=1)
     }
     
   })
   output$vbox6 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[3], subtitle = "", color="blue", width=1)
     }
     
   })
   output$vbox7 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[4], subtitle = "", color="blue", width=1)
     }
     
   })
   output$vbox8 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[5], subtitle = "", color="blue", width=1)
     }
     
   })
   output$vbox9 <- renderValueBox({
     
-    if(sip_tunnus() != "Kõik tunnused"){
+    if(sip_tunnus() != "Koik tunnused"){
       valueBox(summary(data %>% select(sip_tunnus()))[6], subtitle = "", color="blue", width=1)
     }
     
@@ -181,7 +179,7 @@ myserver <- function(input, output, session) {
   
   output$ggPlot <- renderPlot({
     ggcorrplot(
-      title="Arvväärtuste korrelatsioonimaatriks",
+      title="Arvvaartuste korrelatsioonimaatriks",
       plot_data_1(),
       lab = TRUE,
       hc.order = F,

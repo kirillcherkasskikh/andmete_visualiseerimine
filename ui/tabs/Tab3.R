@@ -1,5 +1,5 @@
 
-Tab3 <- tabPanel("Kirjeldav Analüüs",icon = icon("fa-solid fa-chart-simple"),
+Tab3 <- tabPanel("Kirjeldav Analuus",icon = icon("fa-solid fa-chart-simple"),
                  sidebarLayout(
                    sidebarPanel(
                      selectInput("sip_tunnus", label = h3("Vali tunnust:"), choices=NULL),
@@ -19,8 +19,9 @@ Tab3 <- tabPanel("Kirjeldav Analüüs",icon = icon("fa-solid fa-chart-simple"),
                      
                    ),
                    mainPanel(
-                     
-                     conditionalPanel(condition = "input.sip_tunnus != 'Kõik tunnused'",
+                    
+                     conditionalPanel(condition = "input.sip_tunnus != 'Koik tunnused'",
+                                      div(
                                       br(),
                                       div(
                                         valueBoxOutput("vbox4"),
@@ -46,13 +47,13 @@ Tab3 <- tabPanel("Kirjeldav Analüüs",icon = icon("fa-solid fa-chart-simple"),
                                         valueBoxOutput("vbox9"),
                                         class="valuebx"
                                       ),
-                                      br()
+                                      br())
                      ),
                      
-                     plotOutput("dist_plot_num", height="600px"),
+                     div(plotOutput("dist_plot_num", height="600px")),
                      
-                     conditionalPanel(condition = "input.sip_tunnus != 'Kõik tunnused'",
-                                      plotOutput("dist_plot")
+                     conditionalPanel(condition = "input.sip_tunnus != 'Koik tunnused'",
+                                      div(plotOutput("dist_plot"))
                      )
                    )
                   )

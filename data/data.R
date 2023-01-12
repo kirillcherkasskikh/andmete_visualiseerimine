@@ -1,5 +1,5 @@
 # Read data
-data <- read.csv("data/dataset.csv", encoding = "UTF-8")
+data <- suppressWarnings(read.csv("data/dataset.csv", encoding = "UTF-8"))
 
 # Customizing the data type
 data <- data %>% 

@@ -2,7 +2,7 @@ Tab5 <- tabPanel("Korrelatsioonimaatriks", icon = icon("fa-regular fa-table-cell
                  sidebarLayout(
                    sidebarPanel(
                      sliderInput("slider1", 
-                                 label = h3("Korrelatsiooniväärtuste filter"), 
+                                 label = h3("Korrelatsioonivaartuste filter"), 
                                  min = 0, 
                                  max = 1, 
                                  value = 0, 
